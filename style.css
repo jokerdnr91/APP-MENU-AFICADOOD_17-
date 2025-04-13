@@ -1,0 +1,156 @@
+body {
+  font-family: sans-serif;
+  padding: 20px;
+  background-color: #fff;
+  color: #000;
+}
+
+button {
+  margin: 5px;
+  padding: 10px 15px;
+  background-color: #c00;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #900;
+}
+
+.hidden {
+  display: none;
+}
+
+#tablesContainer {
+  margin-top: 20px;
+}
+
+.tabs {
+  margin-top: 20px;
+}
+
+.tab {
+  background-color: #eee;
+  color: #000;
+  border: 1px solid #ccc;
+  margin-right: 5px;
+}
+
+.tab:hover {
+  background-color: #ddd;
+}
+
+#panierContainer {
+  margin-top: 20px;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+}
+
+#panierListe li {
+  margin: 5px 0;
+}
+
+#btnTotal {
+  margin-top: 10px;
+  background-color: green;
+}
+
+#messageTotal {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+
+.guide-btn {
+  margin-left: 10px;
+  padding: 10px 15px;
+  background-color: #666;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+}
+.guide-btn:hover {
+  background-color: #444;
+}
+
+
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  button, .guide-btn {
+    width: 100%;
+    margin: 8px 0;
+    font-size: 1.1em;
+  }
+
+  .tabs {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tab {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  #panierContainer {
+    padding: 10px 0;
+  }
+
+  #panierListe li {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  h1, h2, h3 {
+    text-align: center;
+  }
+}
+
+
+/* Mise en avant de la table en cours */
+#currentTableTitle {
+  font-size: 1.5em;
+  color: #c00;
+  margin-top: 10px;
+}
+
+/* Bouton retour */
+#btnRetour {
+  background-color: #777;
+  margin-bottom: 10px;
+}
+
+/* Message produit ajouté */
+#notifAjout {
+  margin-top: 10px;
+  font-size: 1em;
+  color: green;
+  font-weight: bold;
+  display: none;
+}
+
+/* Total plus visible */
+#panierTotal {
+  font-size: 1.3em;
+  color: #000;
+}
+
+/* Onglets désactivés (table fermée) */
+.tabs.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+
+.tabs.disabled .tab {
+  background-color: #ccc !important;
+  color: #666 !important;
+  cursor: not-allowed !important;
+  border-color: #bbb;
+}

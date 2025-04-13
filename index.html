@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Commande Restaurant</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Prise de Commande</h1>
+  <button id="addTableBtn">Ouvrir une table</button> <a href="astuces.html" class="guide-btn">Astuce</a>
+
+  <div id="tablesContainer"></div>
+
+  <div id="tableView" class="hidden">
+    <h2 id="currentTableTitle">Table</h2><button id="btnRetour" class="hidden">Retour</button><div id="notifAjout"></div>
+
+    <div class="tabs">
+      <button class="tab" data-tab="entree">Entrée</button>
+      <button class="tab" data-tab="plat">Plat</button>
+      <button class="tab" data-tab="dessert">Dessert</button>
+      <button class="tab" data-tab="boisson">Boisson</button>
+    </div>
+
+    <div id="tabContent">Sélectionnez un onglet pour voir les produits.</div>
+    <div id="panierContainer">
+      <h3>Panier de la table</h3>
+      <ul id="panierListe"></ul>
+      <p><strong>Total :</strong> <span id="panierTotal">0 €</span></p>
+      <button id="btnTotal">Total</button>
+      <p id="messageTotal"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
