@@ -20,6 +20,8 @@ const produits = {
   entree: [
     { nom: "Salade d’avocat", prix: 6.00 },
     { nom: "Beignets de crabe", prix: 7.00 },
+    { nom: "Alokos Fries ", prix: 6.00 },
+    { nom: "Baton de Manioc Cuites", prix: 7.00 },
     { nom: "Piémontaise", prix: 5.50 }
   ],
   plat: [
@@ -32,6 +34,7 @@ const produits = {
     { nom: "Sauce graine", prix: 13.00 },
     { nom: "Fumwa (viande fumée)", prix: 15.00 },
     { nom: "Riz Jolof", prix: 12.00 },
+    { nom: "Mafé (boeuf ou poulet )", prix: 12.00 },
     { nom: "Madesu (haricots rouges)", prix: 11.50 }
   ],
   dessert: [
