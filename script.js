@@ -20,16 +20,18 @@ const produits = {
   entree: [
     { nom: "Salade d’avocat", prix: 6.00 },
     { nom: "Beignets de crabe", prix: 7.00 },
-    { nom: "Alokos Fries ", prix: 6.00 },
-    { nom: "Baton de Manioc Cuites", prix: 7.00 },
+    { nom: "Beignets salé", prix: 7.00 },
+    { nom: "Alokos Fries", prix: 6.00 },
+    { nom: "Pastel Thon", prix: 7.00 },
+    { nom: "Pastel Boeuf", prix: 7.00 },
     { nom: "Piémontaise", prix: 5.50 }
   ],
-   ACCOMPAGNEMENTS: [
-    { nom: "Salade d’avocat", prix: 6.00 },
-    { nom: "Beignets de crabe", prix: 7.00 },
-    { nom: "Alokos Fries ", prix: 6.00 },
-    { nom: "Baton de Manioc Cuites", prix: 7.00 },
-    { nom: "Piémontaise", prix: 5.50 }
+   Accompagnements : [
+    { nom: "Alokos Fries", prix: 6.00 },
+    { nom: "Pomme de  Terre Fries", prix: 7.00 },
+    { nom: "Riz Disponible", prix: 6.00 },
+    { nom: "Sauce Rouge", prix: 7.00 },
+    { nom: "La Sauce Du Chef", prix: 5.50 }
   ],
   plat: [
     { nom: "Yassa (poulet ou poisson)", prix: 13.50 },
@@ -39,14 +41,12 @@ const produits = {
     { nom: "Ndolé (bœuf ou poisson)", prix: 14.00 },
     { nom: "Saka Saka", prix: 13.00 },
     { nom: "Sauce graine", prix: 13.00 },
-    { nom: "Fumwa (viande fumée)", prix: 15.00 },
-    { nom: "Riz Jolof", prix: 12.00 },
-    { nom: "Mafé (boeuf ou poulet )", prix: 12.00 },
+    { nom: "Mafé (boeuf)", prix: 12.00 },
+    { nom: "Mafé (poulet)", prix: 12.00 },
     { nom: "Madesu (haricots rouges)", prix: 11.50 }
   ],
   dessert: [
     { nom: "Thiakry", prix: 4.00 },
-    { nom: "Malva Pudding", prix: 4.50 },
     { nom: "Mikate (beignets africains)", prix: 4.00 },
     { nom: "Pastel de nata", prix: 3.50 },
     { nom: "Quaker (bouillie sucrée)", prix: 3.50 },
