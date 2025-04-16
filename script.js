@@ -27,7 +27,7 @@ const produits = {
     { nom: "Piémontaise", prix: 5.50 }
   ],
   
-   Accompagnements : [
+   Accompagnements: [
     { nom: "Alokos Fries", prix: 6.00 },
     { nom: "Pomme de  Terre Fries", prix: 7.00 },
     { nom: "Riz Disponible", prix: 6.00 },
@@ -48,7 +48,7 @@ const produits = {
     { nom: "Madesu (haricots rouges)", prix: 11.50 }
   ],
   
-   Grillades : [
+   Grillades: [
     { nom: "Ailes De Poulet", prix: 10.00 },
     { nom: "Brochette de Boeuf", prix: 10.00 },
     { nom: "Sole Braise à la poéle", prix: 17.00 },
@@ -64,7 +64,6 @@ const produits = {
     { nom: "Omelette avec banane plantain", prix: 7.00 },
   ],
   
-  ],
   dessert: [
     { nom: "Thiakry", prix: 4.00 },
     { nom: "Mikate (beignets africains)", prix: 4.00 },
