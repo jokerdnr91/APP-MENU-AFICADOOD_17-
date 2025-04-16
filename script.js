@@ -24,6 +24,13 @@ const produits = {
     { nom: "Baton de Manioc Cuites", prix: 7.00 },
     { nom: "Piémontaise", prix: 5.50 }
   ],
+   ACCOMPAGNEMENTS: [
+    { nom: "Salade d’avocat", prix: 6.00 },
+    { nom: "Beignets de crabe", prix: 7.00 },
+    { nom: "Alokos Fries ", prix: 6.00 },
+    { nom: "Baton de Manioc Cuites", prix: 7.00 },
+    { nom: "Piémontaise", prix: 5.50 }
+  ],
   plat: [
     { nom: "Yassa (poulet ou poisson)", prix: 13.50 },
     { nom: "Sauce Gombo", prix: 14.00 },
