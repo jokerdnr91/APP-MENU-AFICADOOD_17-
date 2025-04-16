@@ -17,7 +17,7 @@ tableTotals = JSON.parse(localStorage.getItem('tableTotals')) || {};
 tableCount = Object.keys(tablesData).length;
 
 const produits = {
-  entree: [
+  entree : [
     { nom: "Salade d’avocat", prix: 6.00 },
     { nom: "Beignets de crabe", prix: 7.00 },
     { nom: "Beignets salé", prix: 7.00 },
