@@ -17,7 +17,7 @@ tableTotals = JSON.parse(localStorage.getItem('tableTotals')) || {};
 tableCount = Object.keys(tablesData).length;
 
 const produits = {
-  entree: [
+  Entree: [
     { nom: "Salade d’avocat", prix: 6.00 },
     { nom: "Beignets de crabe", prix: 7.00 },
     { nom: "Beignets salé", prix: 7.00 },
@@ -26,6 +26,7 @@ const produits = {
     { nom: "Pastel Boeuf", prix: 7.00 },
     { nom: "Piémontaise", prix: 5.50 }
   ],
+  
    Accompagnements : [
     { nom: "Alokos Fries", prix: 6.00 },
     { nom: "Pomme de  Terre Fries", prix: 7.00 },
@@ -33,6 +34,7 @@ const produits = {
     { nom: "Sauce Rouge", prix: 7.00 },
     { nom: "La Sauce Du Chef", prix: 5.50 }
   ],
+  
   plat: [
     { nom: "Yassa (poulet ou poisson)", prix: 13.50 },
     { nom: "Sauce Gombo", prix: 14.00 },
@@ -45,6 +47,24 @@ const produits = {
     { nom: "Mafé (poulet)", prix: 12.00 },
     { nom: "Madesu (haricots rouges)", prix: 11.50 }
   ],
+  
+   Grillades : [
+    { nom: "Ailes De Poulet", prix: 10.00 },
+    { nom: "Brochette de Boeuf", prix: 10.00 },
+    { nom: "Sole Braise à la poéle", prix: 17.00 },
+    { nom: "Brochette d'agnau", prix: 12.00 }, 
+    { nom: "Maquereau Braisé à la Poéle", prix: 17.00 },
+    { nom: "Carpe Braisé à la poele", prix: 17.00 } 
+   ],
+    
+  PetiteFaim: [
+    { nom: "Emince de boeuf / Sauce jardiniere ", prix: 7.00 },
+    { nom: "Pattes sautés", prix: 7.00 },
+    { nom: "Accompagné de sauce jardinière", prix: 6.00 },
+    { nom: "Omelette avec banane plantain", prix: 7.00 },
+  ],
+  
+  ],
   dessert: [
     { nom: "Thiakry", prix: 4.00 },
     { nom: "Mikate (beignets africains)", prix: 4.00 },
@@ -52,6 +72,7 @@ const produits = {
     { nom: "Quaker (bouillie sucrée)", prix: 3.50 },
     { nom: "Fondant au chocolat", prix: 5.00 }
   ],
+  
   boisson: [
     { nom: "Eau plate (Evian, Cristaline…) 50 cl", prix: 2.00 },
     { nom: "Eau plate 1 L", prix: 3.50 },
