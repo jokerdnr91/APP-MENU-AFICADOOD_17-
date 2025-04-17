@@ -90,6 +90,7 @@ const produits = {
     { nom: "Whisky (type JB, Ballantine’s) 4 cl", prix: 6.00 },
     { nom: "Whisky supérieur (Chivas, Jack Daniel’s…) 4 cl", prix: 8.00 },
     { nom: "Ricard / Pastis 2 cl", prix: 3.50 },
+      { nom: "beer", prix: 3.50 },
     { nom: "Rhum blanc / ambré 4 cl", prix: 5.50 }
   ]
 };
