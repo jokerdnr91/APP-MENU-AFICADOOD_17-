@@ -18,79 +18,80 @@ tableCount = Object.keys(tablesData).length;
 
 const produits = {
   entree: [
-    { nom: "Salade d’avocat", prix: 6.00 },
-    { nom: "Beignets de crabe", prix: 7.00 },
-    { nom: "Beignets salé", prix: 7.00 },
-    { nom: "Alokos Fries", prix: 6.00 },
-    { nom: "Pastel Thon", prix: 7.00 },
-    { nom: "Pastel Boeuf", prix: 7.00 },
-    { nom: "Piémontaise", prix: 5.50 }
+    { nom: "Salade d’avocat", prix: 3.50 },
+    { nom: "Beignets salé", prix: 4.00 }?
+    { nom: "Pastel Thon", prix: 4.00 },
+    { nom: "Pastel Boeuf", prix: 4.00}
   ],
   
    Accompagnements: [
-    { nom: "Alokos Fries", prix: 6.00 },
-    { nom: "Pomme de  Terre Fries", prix: 7.00 },
-    { nom: "Riz Disponible", prix: 6.00 },
+    { nom: "Alokos Fries", prix: 5.00 },
+    { nom: "Pomme de Terre Fries", prix: 5.00 },
+    { nom: "Riz Disponible", prix: 4.50 },
+    { nom: "Riz Suplement ", prix: 2.50 },
     { nom: "Sauce Rouge", prix: 7.00 },
-    { nom: "La Sauce Du Chef", prix: 5.50 }
+    { nom: "Foufou", prix: 7.00 },
+    { nom: "La Sauce Du Chef", prix: 5.00 }
   ],
   
   plat: [
-    { nom: "Yassa (poulet ou poisson)", prix: 13.50 },
-    { nom: "Sauce Gombo", prix: 14.00 },
-    { nom: "Poulet DG", prix: 14.50 },
-    { nom: "Porc rôti", prix: 13.50 },
-    { nom: "Ndolé (bœuf ou poisson)", prix: 14.00 },
-    { nom: "Saka Saka", prix: 13.00 },
-    { nom: "Sauce graine", prix: 13.00 },
-    { nom: "Mafé (boeuf)", prix: 12.00 },
-    { nom: "Mafé (poulet)", prix: 12.00 },
-    { nom: "Madesu (haricots rouges)", prix: 11.50 }
+    { nom: "Yassa (poulet ou poisson)", prix: 15.00 },
+    { nom: "Sauce Gombo", prix: 15.00 },
+    { nom: "Attiéké (Poisson) ", prix: 16.50 },
+    { nom: "Attiéké (Poulet) ", prix: 16.50 },
+    { nom: "Poulet DG", prix: 18.00 },
+    { nom: "Ndolé (bœuf ou poisson)", prix: 15.00 },
+    { nom: "Saka Saka ", prix: 15.00 },
+    { nom: "Foufou", prix: 15.00 },
+    { nom: "Mafé (boeuf)", prix: 15.00 },
+    { nom: "Mafé (poulet)", prix: 16.00 }
   ],
   
    Grillades: [
     { nom: "Ailes De Poulet", prix: 10.00 },
     { nom: "Brochette de Boeuf", prix: 10.00 },
-    { nom: "Sole Braise à la poéle", prix: 17.00 },
-    { nom: "Brochette d'agnau", prix: 12.00 }, 
-    { nom: "Maquereau Braisé à la Poéle", prix: 17.00 },
-    { nom: "Carpe Braisé à la poele", prix: 17.00 } 
+    { nom: "Sole Braise à la poéle", prix: 10.00 }, 
+    { nom: "Maquereau Braisé à la Poéle", prix: 10.00 },
+    { nom: "Carpe Braisé à la poele", prix: 10.00 } 
    ],
     
   PetiteFaim: [
-    { nom: "Emince de boeuf / Sauce jardiniere ", prix: 7.00 },
-    { nom: "Pattes sautés", prix: 7.00 },
-    { nom: "Accompagné de sauce jardinière", prix: 6.00 },
-    { nom: "Omelette avec banane plantain", prix: 7.00 },
+    { nom: "Emince de boeuf / Sauce jardiniere ", prix: 8.00 },
+    { nom: "Pattes sautés", prix: 8.00 },
+    { nom: "Accompagné de sauce jardinière", prix: 8.00 },
+    { nom: "Omelette avec banane plantain", prix: 8.00 },
   ],
   
   dessert: [
     { nom: "Thiakry", prix: 4.00 },
     { nom: "Mikate (beignets africains)", prix: 4.00 },
     { nom: "Pastel de nata", prix: 3.50 },
-    { nom: "Quaker (bouillie sucrée)", prix: 3.50 },
-    { nom: "Fondant au chocolat", prix: 5.00 }
+    { nom: "Quaker (bouillie sucrée)", prix: 3.50 }
   ],
   
   boisson: [
     { nom: "Eau plate (Evian, Cristaline…) 50 cl", prix: 2.00 },
     { nom: "Eau plate 1 L", prix: 3.50 },
-    { nom: "Eau gazeuse (Perrier, Badoit…) 50 cl", prix: 2.50 },
+    { nom: "Eau gazeuse Perrier 50 cl", prix: 2.50 },
     { nom: "Eau gazeuse 1 L", prix: 4.50 },
-    { nom: "Coca-Cola / Coca Zéro 33 cl", prix: 3.00 },
-    { nom: "Orangina / Schweppes 33 cl", prix: 3.00 },
-    { nom: "Jus d’orange / Jus de pomme 25 cl", prix: 3.50 },
-    { nom: "Ice Tea / Oasis 33 cl", prix: 3.00 },
-    { nom: "Verre de vin rouge  12 cl", prix: 4.50 },
-    { nom: "Verre de vin blanc 12 cl", prix: 4.50 },
-    { nom: "Verre de rosé 12 cl", prix: 4.50 },
-    { nom: "Bouteille vin rouge   75 cl", prix: 18.00 },
-    { nom: "Bouteille vin blanc/rosé 75 cl", prix: 18.00 },
-    { nom: "Bouteille de vin supérieur (sélection) 75 cl", prix: 30.00 },
-    { nom: "Whisky (type JB, Ballantine’s) 4 cl", prix: 6.00 },
-    { nom: "Whisky supérieur (Chivas, Jack Daniel’s…) 4 cl", prix: 8.00 },
+    
+    { nom: "Coca-Cola 33 cl", prix: 3.00 },
+    { nom: "Coca Zéro 33 cl", prix: 3.00 },
+    { nom: "Orangina  33 cl", prix: 3.00 },
+    { nom: "Schweppes 33 cl", prix: 3.00 },
+    { nom: "Oasis 33 cl", prix: 3.00 },
+    { nom: "Ice Tea 33 cl", prix: 3.00 },
+    
+    { nom: "Verre de vin 12 cl", prix: 4.50 },
+    { nom: "Bouteille vin rouge 75 cl", prix: 15.00 },
+    { nom: "Bouteille vin blanc/rosé 75 cl", prix: 15.00 },
+    
+    { nom: "Whisky (Ballantine’s) 4 cl", prix: 6.00 },
+    { nom: "Whisky (JB )4 cl", prix: 6.00 },
+    { nom: "Whisky supérieur (Jack Daniel) 4 cl", prix: 8.00 }, 
+    { nom: "Whisky supérieur (Chivas) 4 cl", prix: 8.00 },
     { nom: "Ricard / Pastis 2 cl", prix: 3.50 },
-      { nom: "beer", prix: 3.50 },
+    { nom: "Bière", prix: 3.50 },
     { nom: "Rhum blanc / ambré 4 cl", prix: 5.50 }
   ]
 };
