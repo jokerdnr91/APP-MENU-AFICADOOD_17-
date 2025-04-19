@@ -1,4 +1,3 @@
-
 let tableCount = 0;
 let currentTable = null;
 let tablesData = {};
@@ -19,7 +18,7 @@ tableCount = Object.keys(tablesData).length;
 const produits = {
   entree: [
     { nom: "Salade d’avocat", prix: 3.50 },
-    { nom: "Beignets salé", prix: 4.00 }?
+    { nom: "Beignets salé", prix: 4.00 },
     { nom: "Pastel Thon", prix: 4.00 },
     { nom: "Pastel Boeuf", prix: 4.00}
   ],
@@ -74,18 +73,15 @@ const produits = {
     { nom: "Eau plate 1 L", prix: 3.50 },
     { nom: "Eau gazeuse Perrier 50 cl", prix: 2.50 },
     { nom: "Eau gazeuse 1 L", prix: 4.50 },
-    
     { nom: "Coca-Cola 33 cl", prix: 3.00 },
     { nom: "Coca Zéro 33 cl", prix: 3.00 },
     { nom: "Orangina  33 cl", prix: 3.00 },
     { nom: "Schweppes 33 cl", prix: 3.00 },
     { nom: "Oasis 33 cl", prix: 3.00 },
     { nom: "Ice Tea 33 cl", prix: 3.00 },
-    
     { nom: "Verre de vin 12 cl", prix: 4.50 },
     { nom: "Bouteille vin rouge 75 cl", prix: 15.00 },
     { nom: "Bouteille vin blanc/rosé 75 cl", prix: 15.00 },
-    
     { nom: "Whisky (Ballantine’s) 4 cl", prix: 6.00 },
     { nom: "Whisky (JB )4 cl", prix: 6.00 },
     { nom: "Whisky supérieur (Jack Daniel) 4 cl", prix: 8.00 }, 
