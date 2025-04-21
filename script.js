@@ -65,7 +65,7 @@ const produits = {
     { nom: "Thiakry", prix: 4.00 },
     { nom: "Mikate (beignets africains)", prix: 4.00 },
     { nom: "Pastel de nata", prix: 3.50 },
-    { nom: "Quaker (bouillie sucrée)", prix: 3.50 }
+    { nom: "Quaker (bouillie sucrée)", prix: 3.50 },
   ],
   
   boisson: [
@@ -79,6 +79,10 @@ const produits = {
     { nom: "Schweppes 33 cl", prix: 3.00 },
     { nom: "Oasis 33 cl", prix: 3.00 },
     { nom: "Ice Tea 33 cl", prix: 3.00 },
+    
+    ],
+  
+  boisson_Avec_Alcool:[
     { nom: "Verre de vin 12 cl", prix: 4.50 },
     { nom: "Bouteille vin rouge 75 cl", prix: 15.00 },
     { nom: "Bouteille vin blanc/rosé 75 cl", prix: 15.00 },
@@ -89,7 +93,8 @@ const produits = {
     { nom: "Ricard / Pastis 2 cl", prix: 3.50 },
     { nom: "Bière", prix: 3.50 },
     { nom: "Rhum blanc / ambré 4 cl", prix: 5.50 }
-  ]
+    
+    ],
 };
 
 const addTableBtn = document.getElementById('addTableBtn');
