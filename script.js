@@ -34,12 +34,14 @@ const produits = {
   ],
   
   plat: [
-    { nom: "Yassa (poulet ou poisson)", prix: 15.00 },
+    { nom: "Yassa (poisson)", prix: 15.00 },
+    { nom: "Yassa (poulet)", prix: 15.00 },
     { nom: "Sauce Gombo", prix: 15.00 },
     { nom: "Attiéké (Poisson) ", prix: 16.50 },
     { nom: "Attiéké (Poulet) ", prix: 16.50 },
     { nom: "Poulet DG", prix: 18.00 },
-    { nom: "Ndolé (bœuf ou poisson)", prix: 15.00 },
+    { nom: "Ndolé (poisson)", prix: 15.00 },
+    { nom: "Ndolé (bœuf)", prix: 15.00 },
     { nom: "Saka Saka ", prix: 15.00 },
     { nom: "Foufou", prix: 15.00 },
     { nom: "Mafé (boeuf)", prix: 15.00 },
