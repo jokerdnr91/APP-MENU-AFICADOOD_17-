@@ -87,6 +87,7 @@ const produits = {
   boisson_Avec_Alcool:[
     { nom: "Verre de vin 12 cl", prix: 4.50 },
     { nom: "Bouteille vin rouge 75 cl", prix: 15.00 },
+    { nom: " Champage 75cl ", prix: 20.00 },
     { nom: "Bouteille vin blanc/rosé 75 cl", prix: 15.00 },
     { nom: "Whisky (Ballantine’s) 4 cl", prix: 6.00 },
     { nom: "Whisky (JB )4 cl", prix: 6.00 },
