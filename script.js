@@ -272,4 +272,33 @@ function openTable(number) {
   totalClickCount = 0;
   tabContent.textContent = "Sélectionnez un onglet pour voir les produits.";
   updatePanier();
+const btnEnvoyer = document.getElementById('btnEnvoyer');
+
+btnTotal.addEventListener('click', () => {
+  if (!currentTable || tablesStatus[currentTable]) return;
+
+  totalClickCount++;
+  if (totalClickCount >= 4) {
+    const total = tablesData[currentTable].reduce((acc, item) => acc + item.prix, 0);
+    messageTotal.textContent = `Commande prête à être envoyée. Cliquez sur "Envoyer".`;
+    btnEnvoyer.classList.remove('hidden');
+  } else {
+    messageTotal.textContent = `Cliquez encore ${4 - totalClickCount} fois pour fermer la table.`;
+  }
+});
+
+btnEnvoyer.addEventListener('click', () => {
+  if (!currentTable) return;
+
+  const total = tablesData[currentTable].reduce((acc, item) => acc + item.prix, 0);
+  messageTotal.textContent = `Table ${currentTable} fermée et envoyée. Total : ${total} €. Merci !`;
+
+  tablesStatus[currentTable] = true;
+  tableTotals[currentTable] = total;
+  saveData();
+  updatePanier();
+  document.querySelector('.tabs').classList.add('disabled');
+  btnEnvoyer.classList.add('hidden');
+});
 }
+
