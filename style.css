@@ -41,7 +41,9 @@ button:hover {
 .tab:hover {
   background-color: #ddd;
 }
-
+#btnEnvoyer {
+  background-color: #007BFF;
+}
 #panierContainer {
   margin-top: 20px;
   border-top: 1px solid #ccc;
