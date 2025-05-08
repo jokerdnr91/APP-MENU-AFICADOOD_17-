@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Vue Cuisine</title>
+  <style>
+    body { font-family: sans-serif; margin: 20px; }
+    .table-list { display: flex; flex-wrap: wrap; gap: 10px; }
+    .table-btn {
+      padding: 10px 20px;
+      background-color: #eee;
+      border: 1px solid #ccc;
+      cursor: pointer;
+    }
+    .commande-details {
+      margin-top: 20px;
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+    .prepare-btn {
+      margin-top: 10px;
+      padding: 5px 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Vue Cuisine</h1>
+  <div class="table-list" id="tableList"></div>
+  <div class="commande-details" id="commandeDetails" style="display: none;"></div>
+
+  <script>
+    // Exemple de données de commandes
+    const commandes = [
+      {
+        table: 1,
+        plats: ['Salade', 'Steak frites', 'Tarte aux pommes'],
+        statut: 'en cours'
+      },
+      {
+        table: 2,
+        plats: ['Soupe', 'Poulet rôti', 'Crème brûlée'],
+        statut: 'en cours'
+      }
+    ];
+
+    const tableList = document.getElementById('tableList');
+    const commandeDetails = document.getElementById('commandeDetails');
+
+    // Afficher les boutons pour chaque table avec une commande en cours
+    commandes.forEach((commande, index) => {
+      const btn = document.createElement('button');
+      btn.className = 'table-btn';
+      btn.textContent = 'Table ' + commande.table;
+      btn.onclick = () => afficherCommande(index);
+      tableList.appendChild(btn);
+    });
+
+    function afficherCommande(index) {
+      const commande = commandes[index];
+      commandeDetails.style.display = 'block';
+      commandeDetails.innerHTML = `
+        <h2>Commande Table ${commande.table}</h2>
+        <ul>
+          ${commande.plats.map(plat => `<li>${plat}</li>`).join('')}
+        </ul>
+        <button class="prepare-btn" onclick="marquerPrete(${index})">Préparée</button>
+      `;
+    }
+
+    function marquerPrete(index) {
+      commandes[index].statut = 'préparée';
+      alert('Commande pour la table ' + commandes[index].table + ' marquée comme préparée.');
+      commandeDetails.style.display = 'none';
+    }
+  </script>
+</body>
+</html>
