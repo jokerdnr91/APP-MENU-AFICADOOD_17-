@@ -3,24 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AFRICA_FOOD </title>
+  <title>AFRICA_FOOD</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .hidden { display: none; }
+    .table-btn { margin: 5px; padding: 10px; }
+  </style>
 </head>
 <body>
-  <h1> AFRICA FOOD COMMANDE </h1>
-  <button id="addTableBtn">Ouvrir une table</button> 
-  <a href="astuces.html" class="guide-btn">Astuce</a> 
+  <h1>AFRICA FOOD COMMANDE</h1>
+  <button id="addTableBtn">Ouvrir une table</button>
+  <a href="astuces.html" class="guide-btn">Astuce</a>
   <a href="cuisine.html" style="background-color: #4CAF50; color: white; padding: 8px 15px; border-radius: 8px;">Accéder à la Vue Cuisine</a>
 
   <div id="tablesContainer"></div>
 
   <div id="tableView" class="hidden">
     <h2 id="currentTableTitle">Table</h2>
-    <button id="btnRetour" class="hidden">Retour</button>
+    <button id="btnRetour">Retour</button>
     <div id="notifAjout"></div>
 
     <div class="tabs">
-      <button class="tab" data-tab="entree">Entree</button>
+      <button class="tab" data-tab="entree">Entrée</button>
       <button class="tab" data-tab="plat">Plat</button>
       <button class="tab" data-tab="Accompagnements">Accompagnements</button>
       <button class="tab" data-tab="dessert">Dessert</button>
@@ -30,7 +34,7 @@
       <button class="tab" data-tab="PetiteFaim">Petite Faim</button>
     </div>
 
-    <div id="tabContent">Sélectionnez un onglet pour voir les produits.</div>
+    <div id="tabContent"></div>
 
     <div id="panierContainer">
       <h3>Panier de la table</h3>
@@ -43,50 +47,85 @@
   </div>
 
   <script>
-    // Variables de démonstration
-    let currentTable = 1;
-    let panier = [];
+    let currentTable = null;
+    const panier = [];
 
-    // Simule un clic sur bouton "Total"
-    document.getElementById("btnTotal").onclick = () => {
-      const total = panier.length * 10; // Exemple simple
-      document.getElementById("panierTotal").textContent = total + " €";
+    const tablesContainer = document.getElementById("tablesContainer");
+    const tableView = document.getElementById("tableView");
+    const currentTableTitle = document.getElementById("currentTableTitle");
+    const panierListe = document.getElementById("panierListe");
+    const panierTotal = document.getElementById("panierTotal");
+    const tabContent = document.getElementById("tabContent");
+
+    document.getElementById("addTableBtn").onclick = () => {
+      const tableNumber = tablesContainer.children.length + 1;
+      const btn = document.createElement("button");
+      btn.textContent = "Table " + tableNumber;
+      btn.className = "table-btn";
+      btn.onclick = () => openTable(tableNumber);
+      tablesContainer.appendChild(btn);
     };
 
-    // Envoi vers la "Cuisine"
+    function openTable(number) {
+      currentTable = number;
+      currentTableTitle.textContent = "Table " + number;
+      tableView.classList.remove("hidden");
+      tablesContainer.classList.add("hidden");
+    }
+
+    document.getElementById("btnRetour").onclick = () => {
+      tableView.classList.add("hidden");
+      tablesContainer.classList.remove("hidden");
+    };
+
+    document.querySelectorAll(".tab").forEach(tab => {
+      tab.onclick = () => {
+        const category = tab.dataset.tab;
+        showProducts(category);
+      };
+    });
+
+    function showProducts(category) {
+      // Ici tu peux ajouter les vrais produits selon la catégorie
+      tabContent.innerHTML = "";
+      const plats = ["Poulet", "Riz", "Frites", "Brochette"].map(nom => {
+        const btn = document.createElement("button");
+        btn.textContent = nom;
+        btn.onclick = () => addToPanier(nom);
+        return btn;
+      });
+      plats.forEach(btn => tabContent.appendChild(btn));
+    }
+
+    function addToPanier(item) {
+      panier.push(item);
+      const li = document.createElement("li");
+      li.textContent = item;
+      panierListe.appendChild(li);
+    }
+
+    document.getElementById("btnTotal").onclick = () => {
+      const total = panier.length * 10;
+      panierTotal.textContent = total + " €";
+    };
+
     document.getElementById("envoyerCommande").onclick = () => {
       if (panier.length === 0) {
         alert("Panier vide !");
         return;
       }
-
       const commandes = JSON.parse(localStorage.getItem("commandes")) || [];
       commandes.push({
         table: currentTable,
-        plats: panier,
+        plats: [...panier],
         statut: "en cours"
       });
       localStorage.setItem("commandes", JSON.stringify(commandes));
-
       alert("Commande envoyée à la cuisine !");
-      panier = [];
-      document.getElementById("panierListe").innerHTML = "";
-      document.getElementById("panierTotal").textContent = "0 €";
+      panier.length = 0;
+      panierListe.innerHTML = "";
+      panierTotal.textContent = "0 €";
     };
-
-    // Simuler ajout au panier (à adapter à ton code)
-    const tabContent = document.getElementById("tabContent");
-    tabContent.innerHTML = `<button onclick="ajouterAuPanier('Poulet DG')">Ajouter Poulet DG</button>`;
-
-    function ajouterAuPanier(plat) {
-      panier.push(plat);
-      const li = document.createElement("li");
-      li.textContent = plat;
-      document.getElementById("panierListe").appendChild(li);
-    }
-
-    // Afficher table actuelle
-    document.getElementById("currentTableTitle").textContent = "Table " + currentTable;
   </script>
 </body>
 </html>
