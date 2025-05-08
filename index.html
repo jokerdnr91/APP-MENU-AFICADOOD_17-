@@ -8,12 +8,16 @@
 </head>
 <body>
   <h1> AFRICA FOOD COMMANDE </h1>
-  <button id="addTableBtn">Ouvrir une table</button> <a href="astuces.html" class="guide-btn">Astuce</a> <a href="cuisine.html">Accéder à la Vue Cuisine</a>
+  <button id="addTableBtn">Ouvrir une table</button> 
+  <a href="astuces.html" class="guide-btn">Astuce</a> 
+  <a href="cuisine.html" style="background-color: #4CAF50; color: white; padding: 8px 15px; border-radius: 8px;">Accéder à la Vue Cuisine</a>
 
   <div id="tablesContainer"></div>
 
   <div id="tableView" class="hidden">
-    <h2 id="currentTableTitle">Table</h2><button id="btnRetour" class="hidden">Retour</button><div id="notifAjout"></div>
+    <h2 id="currentTableTitle">Table</h2>
+    <button id="btnRetour" class="hidden">Retour</button>
+    <div id="notifAjout"></div>
 
     <div class="tabs">
       <button class="tab" data-tab="entree">Entree</button>
@@ -27,15 +31,62 @@
     </div>
 
     <div id="tabContent">Sélectionnez un onglet pour voir les produits.</div>
+
     <div id="panierContainer">
       <h3>Panier de la table</h3>
       <ul id="panierListe"></ul>
       <p><strong>Total :</strong> <span id="panierTotal">0 €</span></p>
       <button id="btnTotal">Total</button>
+      <button id="envoyerCommande">Envoyer la commande à la cuisine</button>
       <p id="messageTotal"></p>
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    // Variables de démonstration
+    let currentTable = 1;
+    let panier = [];
+
+    // Simule un clic sur bouton "Total"
+    document.getElementById("btnTotal").onclick = () => {
+      const total = panier.length * 10; // Exemple simple
+      document.getElementById("panierTotal").textContent = total + " €";
+    };
+
+    // Envoi vers la "Cuisine"
+    document.getElementById("envoyerCommande").onclick = () => {
+      if (panier.length === 0) {
+        alert("Panier vide !");
+        return;
+      }
+
+      const commandes = JSON.parse(localStorage.getItem("commandes")) || [];
+      commandes.push({
+        table: currentTable,
+        plats: panier,
+        statut: "en cours"
+      });
+      localStorage.setItem("commandes", JSON.stringify(commandes));
+
+      alert("Commande envoyée à la cuisine !");
+      panier = [];
+      document.getElementById("panierListe").innerHTML = "";
+      document.getElementById("panierTotal").textContent = "0 €";
+    };
+
+    // Simuler ajout au panier (à adapter à ton code)
+    const tabContent = document.getElementById("tabContent");
+    tabContent.innerHTML = `<button onclick="ajouterAuPanier('Poulet DG')">Ajouter Poulet DG</button>`;
+
+    function ajouterAuPanier(plat) {
+      panier.push(plat);
+      const li = document.createElement("li");
+      li.textContent = plat;
+      document.getElementById("panierListe").appendChild(li);
+    }
+
+    // Afficher table actuelle
+    document.getElementById("currentTableTitle").textContent = "Table " + currentTable;
+  </script>
 </body>
 </html>
